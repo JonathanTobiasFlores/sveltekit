@@ -32,9 +32,9 @@
   .typing-cursor {
     display: inline-block;
     width: 2px;
-    height: 1.4em; /* Adjusted height to match text size */
+    height: 1.4em;
     background-color: #ffffff;
-    vertical-align: middle; /* Align cursor vertically */
+    vertical-align: middle;
     animation: blink 0.7s step-end infinite;
   }
 
@@ -46,7 +46,11 @@
 
 <div class="mockup-browser border bg-base-300">
   <div class="mockup-browser-toolbar">
-    <div class="input">https://github.com/jonathantobiasflores</div>
+    <div class="input">
+      <a href="https://github.com/jonathantobiasflores" target="_blank" rel="noopener noreferrer">
+        https://github.com/jonathantobiasflores
+      </a>
+    </div>
   </div>
   <div class="flex justify-center px-4 py-16 bg-base-200">
     <div class="typing-effect" contenteditable="false">

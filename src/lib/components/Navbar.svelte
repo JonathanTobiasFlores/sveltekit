@@ -1,13 +1,4 @@
-<script>
-    // You can add any necessary JavaScript code here
-  </script>
-  
-  <style>
-    /* You can add any necessary CSS styles here */
-  </style>
-  
-  <div class="navbar bg-base-100">
-    <!-- Navbar start icon/button with dropdown menu -->
+<div class="navbar bg-base-100">
     <div class="dropdown flex-none">
       <button class="btn btn-square btn-ghost">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
@@ -21,12 +12,10 @@
       </ul>
     </div>
     
-    <!-- Navbar title -->
     <div class="flex-1">
       <p class="btn btn-ghost normal-case text-xl">Jonathan Flores</p>
     </div>
     
-    <!-- Another button -->
     <div class="flex-none">
       <button class="btn btn-square btn-ghost">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
