@@ -1,5 +1,6 @@
 <script>
-  let text = "console.log('Hello World!')";
+  import { onMount } from 'svelte';
+  let text = 'Fetching quote...';
   let displayText = '';
   let index = 0;
 
@@ -7,18 +8,31 @@
     if (index < text.length) {
       displayText += text.charAt(index);
       index++;
-      setTimeout(typeText, 100);
+      setTimeout(typeText, 80);
     }
   };
 
-  const restartTyping = () => {
-    displayText = '';
-    index = 0;
-    typeText();
+  const fetchGamingQuote = async () => {
+    try {
+      const response = await fetch('https://api.quotable.io/random');
+      const data = await response.json();
+      text = `"${data.content}" — ${data.author}`;
+      displayText = '';
+      index = 0;
+      typeText();
+    } catch (error) {
+      console.error('Error fetching quote:', error);
+      text = 'Failed to fetch quote.';
+      displayText = '';
+      index = 0;
+      typeText();
+    }
   };
 
-  typeText();
-  setInterval(restartTyping, 10000);
+  onMount(() => {
+    fetchGamingQuote();
+    setInterval(fetchGamingQuote, 20000);
+  });
 </script>
 
 <style>
