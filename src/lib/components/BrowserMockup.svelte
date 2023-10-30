@@ -7,7 +7,7 @@
     if (index < text.length) {
       displayText += text.charAt(index);
       index++;
-      setTimeout(typeText, 100); // Adjust speed as necessary
+      setTimeout(typeText, 100);
     }
   };
 
@@ -18,7 +18,7 @@
   };
 
   typeText();
-  setInterval(restartTyping, 10000); // Restart every 10 seconds
+  setInterval(restartTyping, 10000);
 </script>
 
 <style>
@@ -26,16 +26,21 @@
     display: inline-block;
     font-family: monospace;
     white-space: pre;
+    user-select: none;
   }
 
   .typing-cursor {
-    border-right: 2px solid #000;
-    animation: blink 0.7s infinite;
+    display: inline-block;
+    width: 2px;
+    height: 1.4em; /* Adjusted height to match text size */
+    background-color: #ffffff;
+    vertical-align: middle; /* Align cursor vertically */
+    animation: blink 0.7s step-end infinite;
   }
 
   @keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: black; }
+    0%, 50% { opacity: 1 }
+    50.1%, 100% { opacity: 0 }
   }
 </style>
 
@@ -44,8 +49,8 @@
     <div class="input">https://github.com/jonathantobiasflores</div>
   </div>
   <div class="flex justify-center px-4 py-16 bg-base-200">
-    <div class="typing-effect">
+    <div class="typing-effect" contenteditable="false">
       {displayText}<div class="typing-cursor"></div>
-    </div>
+    </div>    
   </div>
 </div>

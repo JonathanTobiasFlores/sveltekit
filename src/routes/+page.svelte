@@ -12,6 +12,7 @@
   
     <main class="flex-1">
       <slot><BrowserMockup /></slot>
+      <slot></slot>
     </main>
   
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
